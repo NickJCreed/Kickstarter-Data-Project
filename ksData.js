@@ -15,33 +15,22 @@ function makeCharts(error, transactionsData) {
 
 
     transactionsData.forEach(function(d) {
-        d.date = parseDate(d.date);
+        d.launched = parseDate(d.launched);
     })
 
-    let dateDim = ndx.dimension(dc.pluck("date"));
-    let totalSpendByDate = dateDim.group().reduceSum(dc.pluck("backers"));
-
-    let minDate = dateDim.bottom(1)[0].date;
-    let maxDate = dateDim.top(1)[0].date;
-
-    let lineSpend = dc.lineChart("#chart");
+    let launchedDim = ndx.dimension(dc.pluck("launched"));
+    let total = launchedDim.group().reduceSum(dc.pluck("backers"));
+    let minDate = launchedDim.bottom(1)[0].launched;
+    let maxDate = launchedDim.top(1)[0].launched;
+    let lineSpend = dc.lineChart("#timeLineChart");
     lineSpend
         .width(1000)
-        .height(300)
-        .dimension(dateDim)
+        .height(250)
+        .dimension(launchedDim)
 
-        .group(totalSpendByDate)
+        .group(total)
         .x(d3.time.scale().domain([minDate, maxDate]))
         .xAxisLabel("Month")
-
-
-
-
-
-
-
-
-
 
 
 
@@ -83,7 +72,7 @@ function makeCharts(error, transactionsData) {
     let subCatDim = ndx.dimension(dc.pluck("subCategory"));
     let amountPledged = subCatDim.group().reduceSum(dc.pluck("pledged"));
     dc.barChart("#categoryPledgesChart")
-        .height(300)
+        .height(250)
         .width(450)
         .dimension(subCatDim)
         .group(amountPledged)
