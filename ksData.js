@@ -46,7 +46,7 @@ function makeCharts(error, transactionsData) {
         .externalRadiusPadding(5)
         .dimension(resultDim)
         .group(totalResults)
-
+        
 
     let popularCategoryDim = ndx.dimension(dc.pluck("subCategory"));
     let totalAmount = popularCategoryDim.group()

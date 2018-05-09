@@ -1,0 +1,64 @@
+svg {
+    border: 0px solid black;
+
+}
+
+#categoryPledgesChart svg {
+    padding-left: 30px;
+    padding-bottom: 15px;
+
+}
+
+#categoryPledgesChart {}
+
+
+
+#submissionsBarChart svg {
+    padding-left: 10px;
+    padding-bottom: 15px;
+
+}
+
+#submissionsBarChart {}
+
+
+
+#resultPieChart svg {
+    padding: 10px;
+
+}
+
+
+#timeLineChart svg {
+    padding-left: 15px;
+}
+
+#timeLineChart {}
+
+
+
+#popularCategoryRowChart svg {
+    padding-bottom: 15px;
+
+}
+
+.x.axis text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+
+/* davisford on github*/
+
+.dc-chart .pie-slice {
+    font-size: 16px;
+
+}
+
+.lineHeading {
+    text-align:center;
+    
+}
+
+.text {
+    text-align:center;
+}
