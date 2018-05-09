@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,21 +16,52 @@
     <title>Document</title>
     <style>
         svg {
-            padding-left: 10px;
+            border: 2px solid black;
         }
+
+        #categoryPledgesChart svg {
+            padding-left:30px;
+        
+        }
+
+        /* davisford on github*/
+
+        #submissionsBarChart svg {
+        padding-left:10px;
+            
+        }
+        
+        #resultPieChart svg {
+            height: 250px;
+            width: 400px;
+
+        }
+        
+        
+        .x.axis text {
+            text-anchor: end !important;
+            transform: rotate(-45deg);
+        }
+
+
+        .dc-chart .pie-slice {
+            font-size:16px;
+            
+        }
+            
     </style>
 </head>
+
 <body>
     <h1>Kickstarter Campaigns for July 2017 </h1>
     <h4>4219 campaigns</h4>
     <div id="resultPieChart"></div>
-    <div id="popularCategoryPieChart"></div>
+    <div id="popularCategoryRowChart"></div>
     <div id="submissionsBarChart"></div>
-    
-    
-    
-    
-    
-    
+    <div id="categoryPledgesChart"></div>
+
+
+
 </body>
+
 </html>
