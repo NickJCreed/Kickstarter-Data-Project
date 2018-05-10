@@ -1,5 +1,5 @@
 queue()
-    .defer(d3.csv, "testBatchEdited.csv")
+    .defer(d3.csv, "ksMainBatch.csv")
     .await(makeCharts);
 
 function makeCharts(error, transactionsData) {
@@ -30,7 +30,8 @@ function makeCharts(error, transactionsData) {
 
         .group(total)
         .x(d3.time.scale().domain([minDate, maxDate]))
-        .xAxisLabel("Month")
+
+
 
 
 
@@ -46,13 +47,13 @@ function makeCharts(error, transactionsData) {
         .externalRadiusPadding(5)
         .dimension(resultDim)
         .group(totalResults)
-        
+
 
     let popularCategoryDim = ndx.dimension(dc.pluck("subCategory"));
     let totalAmount = popularCategoryDim.group()
     dc.rowChart("#popularCategoryRowChart")
-        .height(250)
-        .width(400)
+        .height(350)
+        .width(550)
         .dimension(popularCategoryDim)
         .group(totalAmount)
 
@@ -60,54 +61,64 @@ function makeCharts(error, transactionsData) {
     let countryDim = ndx.dimension(dc.pluck("country"));
     let totalSubPerCountry = countryDim.group()
     dc.barChart("#submissionsBarChart")
-        .height(250)
-        .width(600)
+        .height(350)
+        .width(550)
         .dimension(countryDim)
         .group(totalSubPerCountry)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
-        .xAxisLabel("Submissions per country.")
+
 
 
     let subCatDim = ndx.dimension(dc.pluck("subCategory"));
     let amountPledged = subCatDim.group().reduceSum(dc.pluck("pledged"));
-    dc.barChart("#categoryPledgesChart")
-        .height(250)
-        .width(450)
+    dc.barChart("#pledgesCategoryChart")
+        .height(350)
+        .width(550)
         .dimension(subCatDim)
         .group(amountPledged)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
-        .xAxisLabel("Pledges per Category")
+        
+    
+    let all = ndx.groupAll()
+        
+        
+        dc.numberDisplay("#number-box")
+        
+        .formatNumber(d3.format("d"))
+       .valueAccessor(function (d) {
+           return d;
+       })
+       .group(all);
+       
+       
+       
+    //     let pledged = ndx.groupAll().reduce(
+    //     function(p, v) {
+    //       p.total  += +v["pledged"];
+    //       return p;
+    //   },
+    //   function(p, v) {
+
+    //       p.total -= -v["pledged"];
+    //       return p;
+    //   },
+    //   function() {
+    //       return { total: 0 };
+    //   })
+    //         console.log(pledged[0])
+        
+            
+            
+    //         dc.numberDisplay("#pledgedBox")
+            
+    //         .formatNumber(d3.format("d"))
+    //       .valueAccessor(function (d) {
+    //           return d.total;
+    //       })
+    //   .group(pledged); // no quotes because its a variable from directly above.
 
 
-
-
-
-
-
-    // let parseDate = d3.time.format("%Y/%m/%d").parse;
-
-    // transactionsData.forEach(function(d) {
-    //     d.launched = parseDate(d.launched);
-    // })
-
-    // let launchedDim = ndx.dimension(dc.pluck("launched"));
-    // let totalLaunched = launchedDim.group().reduceSum(dc.pluck("pledged"));
-    // let minDate = launchedDim.bottom(1)[0].date;
-    // let maxDate = launchedDim.top(1)[0].date;
-    // dc.lineChart("#chart")
-    //     .height(300)
-    //     .width(450)
-    //     .dimension(launchedDim)
-    //     .group(totalLaunched)
-    //     .x(d3.time.scale().domain([minDate, maxDate]))
-    //     .xUnits(dc.units.ordinal)
-    //     .xAxisLabel("")
-
-
-
-
-
-    dc.renderAll();
-}
+                dc.renderAll();
+            }
