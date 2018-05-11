@@ -1,63 +1,113 @@
+body {
+    background-color:;
+}
+
+
+
 svg {
-    border: 1px solid black;
+    border: 0px solid darkcyan;
 
 
-}
-
-
-#pledgesCategoryChart svg {
-    width:570px;
-    padding-left: 60px;
-    padding-bottom: 15px;
-    height: 390px;
-
-}
-
-#pledgesCategoryChart {}
-
-
-
-#submissionsBarChart svg {
-    padding-left: 24px;
-    padding-bottom:15px;
-    height: 390px;
-
-}
-
-#submissionsBarChart {}
-
-
-
-#resultPieChart svg {
-    /*padding: 10px;*/
-    /*margin-left:30px;*/
-    height: 275px;
-
-}
-
-#resultPieChart {
-    padding-left:60px;
-    
 }
 
 
 #timeLineChart svg {
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 270px;
-    width:1150px;
+    height:265px;
+    width:1120px;
+    padding-left:10px;
+    
 }
 
 #timeLineChart {
+    width:1125px;
+    padding-left:15px;
+    margin:0px;
+}
+
+
+
+#resultPieChart svg{
+    height:250px;
+    margin-left:50px;
+    
+    
+}
+
+#resultPieChart {
+    padding:0px;
+    height:270px;
+    
+    
+}
+
+
+#submissionsBarChart svg {
+    padding-left:24px;
+    padding-bottom:19pc;
+    
+}
+
+#submissionsBarChart {
+    padding-bottom:24px;
+}
+
+
+
+
+
+
+
+
+/*#pledgesCategoryChart svg {*/
+/*    width:570px;*/
+/*    padding-left: 60px;*/
+/*    padding-bottom: 15px;*/
+/*    height: 390px;*/
+
+/*}*/
+
+/*#pledgesCategoryChart {}*/
+
+
+
+/*#submissionsBarChart svg {*/
+/*    padding-left: 24px;*/
+/*    padding-bottom:15px;*/
+/*    height: 390px;*/
+
+/*}*/
+
+/*#submissionsBarChart {}*/
+
+
+
+/*#resultPieChart svg {*/
+    /*padding: 10px;*/
+    /*margin-left:30px;*/
+/*    height: 250px;*/
+
+/*}*/
+
+/*#resultPieChart {*/
+/*    padding-left:60px;*/
+    
+/*}*/
+
+
+/*#timeLineChart svg {*/
+/*    padding-left: 20px;*/
+/*    padding-right: 20px;*/
+/*    height: 280px;*/
+/*    width:1150px;*/
+/*}*/
+
+/*#timeLineChart {*/
    
-}
+/*}*/
 
 
 
-#popularCategoryRowChart svg {
-    padding-bottom: 15px;
 
-}
 
 
 .dc-chart .axis text {
@@ -67,6 +117,8 @@ svg {
 
 .dc-chart g.row text {
     fill: black;
+    font-weight:700;
+    font-size: 14px;
 }
 
 .x.axis text { /*davisford on github*/
@@ -75,9 +127,9 @@ svg {
 }
 
 
-
 .dc-chart .pie-slice {
-    font-size: 16px;
+    font-size: 14px;
+
 
 }
 
@@ -90,8 +142,27 @@ svg {
     text-align: center;
 }
 
+.frame{
+    border: 2px solid darkcyan;
+}
 #number-box {
     background: orange;
+    width: 50px;
+    font-size: 20px;
+    text-align: center;
+    line-height: normal;
+}
+
+#start-date {
+    background: green;
+    width: 50px;
+    font-size: 20px;
+    text-align: center;
+    line-height: normal;
+}
+
+#end-date {
+    background: darkcyan;
     width: 50px;
     font-size: 20px;
     text-align: center;

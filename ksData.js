@@ -44,15 +44,15 @@ function makeCharts(error, transactionsData) {
         .radius(250)
         .innerRadius(20)
         .externalLabels(10)
-        .externalRadiusPadding(5)
+        .externalRadiusPadding(0)
         .dimension(resultDim)
         .group(totalResults)
-
+        
 
     let popularCategoryDim = ndx.dimension(dc.pluck("subCategory"));
     let totalAmount = popularCategoryDim.group()
     dc.rowChart("#popularCategoryRowChart")
-        .height(350)
+        .height(280)
         .width(550)
         .dimension(popularCategoryDim)
         .group(totalAmount)
@@ -61,7 +61,7 @@ function makeCharts(error, transactionsData) {
     let countryDim = ndx.dimension(dc.pluck("country"));
     let totalSubPerCountry = countryDim.group()
     dc.barChart("#submissionsBarChart")
-        .height(350)
+        .height(280)
         .width(550)
         .dimension(countryDim)
         .group(totalSubPerCountry)
@@ -73,12 +73,13 @@ function makeCharts(error, transactionsData) {
     let subCatDim = ndx.dimension(dc.pluck("subCategory"));
     let amountPledged = subCatDim.group().reduceSum(dc.pluck("pledged"));
     dc.barChart("#pledgesCategoryChart")
-        .height(350)
+        .height(280)
         .width(550)
         .dimension(subCatDim)
         .group(amountPledged)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
+        
         
     
     let all = ndx.groupAll()
@@ -93,6 +94,7 @@ function makeCharts(error, transactionsData) {
        .group(all);
        
        
+      
        
     //     let pledged = ndx.groupAll().reduce(
     //     function(p, v) {
@@ -122,3 +124,7 @@ function makeCharts(error, transactionsData) {
 
                 dc.renderAll();
             }
+            
+            
+
+
