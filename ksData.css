@@ -1,13 +1,15 @@
 svg {
-    border: 0px solid black;
+    border: 1px solid black;
+
 
 }
 
 
 #pledgesCategoryChart svg {
-    padding-left: 40px;
+    width:570px;
+    padding-left: 60px;
     padding-bottom: 15px;
-    height:390px;
+    height: 390px;
 
 }
 
@@ -16,9 +18,9 @@ svg {
 
 
 #submissionsBarChart svg {
-    padding-left: 10px;
-    padding-bottom: 15px;
-    height:390px;
+    padding-left: 24px;
+    padding-bottom:15px;
+    height: 390px;
 
 }
 
@@ -27,19 +29,27 @@ svg {
 
 
 #resultPieChart svg {
-    padding: 10px;
-    height:275px;
+    /*padding: 10px;*/
+    /*margin-left:30px;*/
+    height: 275px;
 
+}
+
+#resultPieChart {
+    padding-left:60px;
+    
 }
 
 
 #timeLineChart svg {
-    padding-left: 15px;
-    height:270px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 270px;
+    width:1150px;
 }
 
 #timeLineChart {
-    
+   
 }
 
 
@@ -50,14 +60,21 @@ svg {
 }
 
 
+.dc-chart .axis text {
+    fill: black;
+    font-size: 14px;
+}
 
+.dc-chart g.row text {
+    fill: black;
+}
 
-.x.axis text {
+.x.axis text { /*davisford on github*/
     text-anchor: end !important;
     transform: rotate(-45deg);
 }
 
- /*davisford on github*/
+
 
 .dc-chart .pie-slice {
     font-size: 16px;
@@ -65,24 +82,18 @@ svg {
 }
 
 .lineHeading {
-    text-align:center;
-    
+    text-align: center;
+
 }
 
 .text {
-    text-align:center;
+    text-align: center;
 }
 
 #number-box {
-        background: orange;
-        width: 200px;
-        font-size: 50px;
-        text-align: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        line-height: normal;
-      }
-      
-      
-      
-      
+    background: orange;
+    width: 50px;
+    font-size: 20px;
+    text-align: center;
+    line-height: normal;
+}

@@ -24,10 +24,10 @@ function makeCharts(error, transactionsData) {
     let maxDate = launchedDim.top(1)[0].launched;
     let lineSpend = dc.lineChart("#timeLineChart");
     lineSpend
-        .width(1000)
+        .width(1100)
         .height(250)
+        .margins({top:10, bottom:50, right:10, left:50})
         .dimension(launchedDim)
-
         .group(total)
         .x(d3.time.scale().domain([minDate, maxDate]))
 
