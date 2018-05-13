@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/core.js"></script>-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -17,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.js"></script>
     <script type="text/javascript" src="ksData.js"></script>
     <link rel="stylesheet" href="ksData.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -31,16 +31,16 @@
         </div>
 
 
+            <div class="row">
+                <div class="col-md-6  panel panel-default timeLineMargin">
+                    <h3 class="text panel-heading">Project Submissions Timeline</h3>
+                    <div id="timeLineChart">
 
-        <div class="row">
-            <div class="col-md-8 panel panel-default">
-                <h3 class="text panel-heading">Project Submissions Timeline</h3>
-                <div id="timeLineChart">
-
+                    </div>
                 </div>
-            </div>
+            
 
-            <div class="col-md-4 panel panel-default">
+            <div class="col-md-2 col-md-offset-1 panel panel-default">
                 <h3 class="text panel-heading">Project Funding Results</h3>
                 <div id="resultPieChart" class="panel-body">
 
@@ -54,16 +54,16 @@
 
 
         <div class="row">
-            <div class="col-sm-4 panel panel-default">
+            <div class="col-sm-4 panel panel-default categoryRowMargin">
                 <h3 class="text panel-heading">Submissions per Category</h3>
-                <div id="popularCategoryRowChart" class="panel-body">
+                <div id="categoryRowChart" class="panel-body">
 
                 </div>
             </div>
 
 
 
-            <div class="col-sm-4 panel panel-default">
+            <div class="col-sm-4 panel panel-default submissionsBarMargin">
                 <h3 class="text panel-heading">Submissions per Country</h3>
                 <div id="submissionsBarChart" class="panel-body">
 
@@ -71,7 +71,7 @@
             </div>
 
 
-            <div class="col-sm-4 panel panel-default">
+            <div class="col-sm-4 panel panel-default pledgesCategoryMargin">
                 <h3 class="text panel-heading">Amount Pledged in Dollars per Category</h3>
                 <div id="pledgesCategoryChart" class="panel-body">
 

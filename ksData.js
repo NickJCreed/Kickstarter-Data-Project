@@ -24,7 +24,7 @@ function makeCharts(error, transactionsData) {
     let maxDate = launchedDim.top(1)[0].launched;
     let lineSpend = dc.lineChart("#timeLineChart");
     lineSpend
-        .width(1100)
+        .width(900)
         .height(250)
         .margins({top:10, bottom:50, right:10, left:50})
         .dimension(launchedDim)
@@ -33,27 +33,24 @@ function makeCharts(error, transactionsData) {
 
 
 
-
-
-
-
     let resultDim = ndx.dimension(dc.pluck("result"));
     let totalResults = resultDim.group()
     dc.pieChart("#resultPieChart")
-        .height(250)
-        .radius(250)
-        .innerRadius(20)
-        .externalLabels(10)
+        .height(200)
+        .radius(200)
+        .innerRadius(10)
+        .externalLabels(0)
         .externalRadiusPadding(0)
         .dimension(resultDim)
         .group(totalResults)
         
+        
 
     let popularCategoryDim = ndx.dimension(dc.pluck("subCategory"));
     let totalAmount = popularCategoryDim.group()
-    dc.rowChart("#popularCategoryRowChart")
-        .height(280)
-        .width(550)
+    dc.rowChart("#categoryRowChart")
+        .height(340)
+        .width(520)
         .dimension(popularCategoryDim)
         .group(totalAmount)
 
@@ -61,8 +58,8 @@ function makeCharts(error, transactionsData) {
     let countryDim = ndx.dimension(dc.pluck("country"));
     let totalSubPerCountry = countryDim.group()
     dc.barChart("#submissionsBarChart")
-        .height(280)
-        .width(550)
+        .height(300)
+        .width(520)
         .dimension(countryDim)
         .group(totalSubPerCountry)
         .x(d3.scale.ordinal())
@@ -73,8 +70,8 @@ function makeCharts(error, transactionsData) {
     let subCatDim = ndx.dimension(dc.pluck("subCategory"));
     let amountPledged = subCatDim.group().reduceSum(dc.pluck("pledged"));
     dc.barChart("#pledgesCategoryChart")
-        .height(280)
-        .width(550)
+        .height(300)
+        .width(520)
         .dimension(subCatDim)
         .group(amountPledged)
         .x(d3.scale.ordinal())

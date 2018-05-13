@@ -1,111 +1,92 @@
-body {
-    background-color:;
-}
+body {}
 
 
 
 svg {
-    border: 0px solid darkcyan;
+    border: px solid black;
+
+}
+
+h1{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight:600;
+    color:darkcyan;
+}
+
+h3{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight:600;
+    color:darkcyan;
+}
+
+.timeLineMargin {
+    margin-left: 20px;
+}
 
 
+.categoryRowMargin{
+    margin-left:20px;
+    margin-right:10px;
+    width:auto;
+}
+
+.submissionsBarMargin{
+    width:auto;
+}
+
+.pledgesCategoryMargin{
+    margin-right:20px;
+    margin-left:10px;
+    width:auto;
 }
 
 
 #timeLineChart svg {
-    height:265px;
-    width:1120px;
-    padding-left:10px;
-    
-}
-
-#timeLineChart {
-    width:1125px;
-    padding-left:15px;
-    margin:0px;
+    height: 100%;
+    width: 100%;
+    padding-left: 15px;
+    padding-bottom: 10px;
 }
 
 
-
-#resultPieChart svg{
-    height:250px;
-    margin-left:50px;
-    
-    
+#resultPieChart svg {
+    height: 100%;
+    width: 100%;
+    position:relative;
+    right:16px;
 }
 
 #resultPieChart {
-    padding:0px;
-    height:270px;
-    
-    
-}
-
-
-#submissionsBarChart svg {
-    padding-left:24px;
-    padding-bottom:19pc;
-    
-}
-
-#submissionsBarChart {
-    padding-bottom:24px;
+    height: 265px;
 }
 
 
 
+#categoryRowChart {
 
+  
+}
 
-
-
-
-/*#pledgesCategoryChart svg {*/
-/*    width:570px;*/
-/*    padding-left: 60px;*/
-/*    padding-bottom: 15px;*/
-/*    height: 390px;*/
-
-/*}*/
-
-/*#pledgesCategoryChart {}*/
-
-
-
-/*#submissionsBarChart svg {*/
-/*    padding-left: 24px;*/
-/*    padding-bottom:15px;*/
-/*    height: 390px;*/
-
-/*}*/
-
-/*#submissionsBarChart {}*/
-
-
-
-/*#resultPieChart svg {*/
-    /*padding: 10px;*/
-    /*margin-left:30px;*/
-/*    height: 250px;*/
-
-/*}*/
-
-/*#resultPieChart {*/
-/*    padding-left:60px;*/
+#submissionsBarChart svg{
+    height:100%;
+    width:100%;
+    padding-left:30px;
+    padding-bottom:40px;
     
-/*}*/
+    
+}
 
+#pledgesCategoryChart svg{
+    padding-bottom:40px;
+    padding-left:56px;
+    height:100%;
+    width:100%;
+    
+    
+}
 
-/*#timeLineChart svg {*/
-/*    padding-left: 20px;*/
-/*    padding-right: 20px;*/
-/*    height: 280px;*/
-/*    width:1150px;*/
-/*}*/
-
-/*#timeLineChart {*/
-   
-/*}*/
-
-
+#pledgesCategoryChart {
+}
 
 
 
@@ -117,11 +98,12 @@ svg {
 
 .dc-chart g.row text {
     fill: black;
-    font-weight:700;
+    font-weight: 700;
     font-size: 14px;
 }
 
-.x.axis text { /*davisford on github*/
+.x.axis text {
+    /*davisford on github*/
     text-anchor: end !important;
     transform: rotate(-45deg);
 }
@@ -142,27 +124,8 @@ svg {
     text-align: center;
 }
 
-.frame{
-    border: 2px solid darkcyan;
-}
+
 #number-box {
-    background: orange;
-    width: 50px;
-    font-size: 20px;
-    text-align: center;
-    line-height: normal;
-}
-
-#start-date {
-    background: green;
-    width: 50px;
-    font-size: 20px;
-    text-align: center;
-    line-height: normal;
-}
-
-#end-date {
-    background: darkcyan;
     width: 50px;
     font-size: 20px;
     text-align: center;
