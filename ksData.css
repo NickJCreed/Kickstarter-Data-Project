@@ -1,4 +1,8 @@
-body {}
+body {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0L2J9S1ohoXlbjpxAq8BaYt_DDe-J3x4Ut15sTZwIk4JXGsyz");
+    background-repeat: no-repeat;
+    background-size: cover
+}
 
 
 
@@ -10,13 +14,17 @@ svg {
 h1{
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight:600;
-    color:darkcyan;
+    color:white;
 }
 
+p{
+    color:white;
+    font-size:20px;
+}
 h3{
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight:600;
-    color:darkcyan;
+    color:#a3ff00;
 }
 
 .timeLineMargin {
@@ -78,7 +86,7 @@ h3{
 
 #pledgesCategoryChart svg{
     padding-bottom:40px;
-    padding-left:56px;
+    padding-left:59px;
     height:100%;
     width:100%;
     

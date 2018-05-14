@@ -64,6 +64,8 @@ function makeCharts(error, transactionsData) {
         .group(totalSubPerCountry)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
+        .elasticY(true)
+        
 
 
 
