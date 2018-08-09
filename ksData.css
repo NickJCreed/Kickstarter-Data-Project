@@ -5,11 +5,10 @@ body {
 }
 
 
-
-svg {
-    border: px solid black;
-
-}
+/* The below is used as a visual aide to assist positioning charts and the labels inside div space. Uncomment to enable */
+/*svg {*/
+/*    border: 2px solid black;*/
+/*}*/
 
 h1{
     font-family: 'IBM Plex Sans', sans-serif;
@@ -17,15 +16,24 @@ h1{
     color:white;
 }
 
+
 p{
     color:white;
     font-size:20px;
 }
+
+
 h3{
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight:600;
     color:#a3ff00;
 }
+
+a{
+    color:white;
+}
+
+
 
 .timeLineMargin {
     margin-left: 20px;
@@ -37,6 +45,7 @@ h3{
     margin-right:10px;
     width:auto;
 }
+
 
 .submissionsBarMargin{
     width:auto;
@@ -64,6 +73,7 @@ h3{
     right:16px;
 }
 
+
 #resultPieChart {
     height: 265px;
 }
@@ -71,32 +81,27 @@ h3{
 
 
 #categoryRowChart {
-
-  
 }
+
 
 #submissionsBarChart svg{
     height:100%;
     width:100%;
     padding-left:30px;
     padding-bottom:40px;
-    
-    
 }
+
 
 #pledgesCategoryChart svg{
     padding-bottom:40px;
     padding-left:59px;
     height:100%;
     width:100%;
-    
-    
 }
+
 
 #pledgesCategoryChart {
 }
-
-
 
 
 .dc-chart .axis text {
@@ -111,7 +116,7 @@ h3{
 }
 
 .x.axis text {
-    /*davisford on github*/
+    /* credit to davisford on github. This code allows our x-axis labels to be slanted 45 degrees.*/
     text-anchor: end !important;
     transform: rotate(-45deg);
 }

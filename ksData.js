@@ -30,6 +30,7 @@ function makeCharts(error, transactionsData) {
         .dimension(launchedDim)
         .group(total)
         .x(d3.time.scale().domain([minDate, maxDate]))
+        
 
 
 
@@ -53,6 +54,7 @@ function makeCharts(error, transactionsData) {
         .width(520)
         .dimension(popularCategoryDim)
         .group(totalAmount)
+        .elasticX(true)
 
 
     let countryDim = ndx.dimension(dc.pluck("country"));
@@ -78,6 +80,7 @@ function makeCharts(error, transactionsData) {
         .group(amountPledged)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
+        .elasticY(true)
         
         
     
