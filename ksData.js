@@ -22,11 +22,13 @@ function makeCharts(error, transactionsData) {
     let total = launchedDim.group().reduceSum(dc.pluck("backers"));
     let minDate = launchedDim.bottom(1)[0].launched;
     let maxDate = launchedDim.top(1)[0].launched;
-    let lineSpend = dc.lineChart("#timeLineChart");
+    
+    
+    let lineSpend = dc.lineChart("#submissionsTimeLineChart");
     lineSpend
-        .width(900)
-        .height(250)
-        .margins({top:10, bottom:50, right:10, left:50})
+        .width(800)
+        .height(300)
+        .margins({top:10, bottom:90, right:10, left:70})
         .dimension(launchedDim)
         .group(total)
         .x(d3.time.scale().domain([minDate, maxDate]))

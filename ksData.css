@@ -5,7 +5,7 @@ body {
 }
 
 
-/* The below is used as a visual aide to assist positioning charts and the labels inside div space. Uncomment to enable */
+/* The code below is used as a visual aide to assist positioning charts and the labels inside div space. Uncomment to enable */
 /*svg {*/
 /*    border: 2px solid black;*/
 /*}*/
@@ -16,131 +16,130 @@ h1{
     color:white;
 }
 
-
 p{
     color:white;
     font-size:20px;
 }
-
-
 h3{
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight:600;
     color:#a3ff00;
 }
 
-a{
-    color:white;
-}
-
-
-
-.timeLineMargin {
-    margin-left: 20px;
-}
-
-
-.categoryRowMargin{
-    margin-left:20px;
-    margin-right:10px;
-    width:auto;
-}
-
-
-.submissionsBarMargin{
-    width:auto;
-}
-
-.pledgesCategoryMargin{
-    margin-right:20px;
-    margin-left:10px;
-    width:auto;
-}
-
-
-#timeLineChart svg {
-    height: 100%;
-    width: 100%;
-    padding-left: 15px;
-    padding-bottom: 10px;
-}
-
-
-#resultPieChart svg {
-    height: 100%;
-    width: 100%;
-    position:relative;
-    right:16px;
-}
-
-
-#resultPieChart {
-    height: 265px;
-}
-
-
-
-#categoryRowChart {
-}
-
-
-#submissionsBarChart svg{
-    height:100%;
-    width:100%;
-    padding-left:30px;
-    padding-bottom:40px;
-}
-
-
-#pledgesCategoryChart svg{
-    padding-bottom:40px;
-    padding-left:59px;
-    height:100%;
-    width:100%;
-}
-
-
-#pledgesCategoryChart {
-}
-
-
-.dc-chart .axis text {
-    fill: black;
-    font-size: 14px;
-}
-
-.dc-chart g.row text {
-    fill: black;
-    font-weight: 700;
-    font-size: 14px;
-}
+/*.timeLineChart{*/
+/*   width:1200px;*/
+/*}*/
+/*#timeLineChart svg {*/
+/*    height: 270px;*/
+    
+/*}*/
 
 .x.axis text {
-    /* credit to davisford on github. This code allows our x-axis labels to be slanted 45 degrees.*/
+     /*credit to davisford on github*/
     text-anchor: end !important;
     transform: rotate(-45deg);
 }
 
 
-.dc-chart .pie-slice {
-    font-size: 14px;
 
 
-}
-
-.lineHeading {
-    text-align: center;
-
-}
-
-.text {
-    text-align: center;
-}
 
 
-#number-box {
-    width: 50px;
-    font-size: 20px;
-    text-align: center;
-    line-height: normal;
-}
+
+
+
+/*.categoryRowMargin{*/
+/*    margin-left:20px;*/
+/*    margin-right:10px;*/
+/*    width:auto;*/
+/*}*/
+
+/*.submissionsBarMargin{*/
+/*    width:auto;*/
+/*}*/
+
+/*.pledgesCategoryMargin{*/
+/*    margin-right:20px;*/
+/*    margin-left:10px;*/
+/*    width:auto;*/
+/*}*/
+
+
+
+/*#resultPieChart svg {*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    position:relative;*/
+/*    right:16px;*/
+/*}*/
+
+/*#resultPieChart {*/
+/*    height: 265px;*/
+/*}*/
+
+
+
+/*#categoryRowChart {*/
+
+  
+/*}*/
+
+/*#submissionsBarChart svg{*/
+/*    height:100%;*/
+/*    width:100%;*/
+/*    padding-left:30px;*/
+/*    padding-bottom:40px;*/
+/*}*/
+
+/*#pledgesCategoryChart svg{*/
+/*    padding-bottom:40px;*/
+/*    padding-left:59px;*/
+/*    height:100%;*/
+/*    width:100%;*/
+    
+    
+/*}*/
+
+/*#pledgesCategoryChart {*/
+/*}*/
+
+
+
+
+/*.dc-chart .axis text {*/
+/*    fill: black;*/
+/*    font-size: 14px;*/
+/*}*/
+
+/*.dc-chart g.row text {*/
+/*    fill: black;*/
+/*    font-weight: 700;*/
+/*    font-size: 14px;*/
+/*}*/
+
+/*.x.axis text {*/
+    /* credit to davisford on github*/
+/*    text-anchor: end !important;*/
+/*    transform: rotate(-45deg);*/
+/*}*/
+
+
+/*.dc-chart .pie-slice {*/
+/*    font-size: 14px;*/
+
+
+/*}*/
+
+/*.lineHeading {*/
+/*    text-align: center;*/
+
+/*}*/
+
+
+
+/*#number-box {*/
+/*    width: 50px;*/
+/*    font-size: 20px;*/
+/*    text-align: center;*/
+/*    line-height: normal;*/
+/*}*/
