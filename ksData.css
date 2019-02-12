@@ -5,12 +5,12 @@ body {
 }
 
 
-/* The code below is used as a visual aide to assist positioning charts and the labels inside div space. Uncomment to enable */
-/*svg {*/
-/*    border: 2px solid black;*/
-/*}*/
+ /*The code below is used as a visual aide to assist positioning charts and the labels inside div space.*/
+svg {
+    border: 2px solid royalblue;
+}
 
-h1{
+h1,h3{
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight:600;
     color:white;
@@ -20,11 +20,11 @@ p{
     color:white;
     font-size:20px;
 }
-h3{
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight:600;
-    color:#a3ff00;
+
+.reset-button{
+    color:LemonChiffon;
 }
+
 
 /*.timeLineChart{*/
 /*   width:1200px;*/
@@ -40,12 +40,9 @@ h3{
     transform: rotate(-45deg);
 }
 
-
-
-
-
-
-
+svg{
+    background-color:white;
+}
 
 
 /*.categoryRowMargin{*/
@@ -66,16 +63,14 @@ h3{
 
 
 
-/*#resultPieChart svg {*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*    position:relative;*/
-/*    right:16px;*/
-/*}*/
+#resultPieChart svg {
+    height: 100%;
+    width: 100%;
+}
 
-/*#resultPieChart {*/
-/*    height: 265px;*/
-/*}*/
+#resultPieChart {
+    height: 300px;
+}
 
 
 

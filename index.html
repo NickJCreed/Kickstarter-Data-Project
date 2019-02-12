@@ -21,63 +21,45 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
                 <h1>Kickstarted</h1>
                 <p>You are analysing <span id="number-box"></span> projects.
-                <a href="javascript:dc.filterAll(); dc.renderAll();">Reset Charts</a></p>
+                    <a href="javascript:dc.filterAll(); dc.renderAll();" class="reset-button">Reset Charts</a></p>
             </div>
         </div>
-
-
+        
         <div class="row">
-            <div class="col-sm-9  panel panel-default submissions-timeline-chart">
-                <h3 class="text-center panel-heading">Project Submissions Timeline</h3>
+            <div class="col-md-6 col-sm-6">
+                <h3>Project Submissions Timeline</h3>
                 <span id="submissionsTimeLineChart"></span>
             </div>
-
-
-            <div class="col-sm-2 col-sm-offset-1 panel panel-default">
-                <h3 class="text panel-heading">Project Funding Results</h3>
-                <div id="resultPieChart" class="panel-body">
+            <div class="col-md-3 col-sm-3">
+                <h3>Project Funding Results</h3>
+                <div id="resultPieChart">
                 </div>
             </div>
         </div>
-
-
-
-
-
 
         <div class="row">
-            <div class="col-sm-4 panel panel-default categoryRowMargin">
-                <h3 class="text panel-heading">Submissions per Category</h3>
-                <div id="categoryRowChart" class="panel-body">
+            <div class="col-sm-4">
+                <h3>Submissions per Category</h3>
+                <div id="categoryRowChart">
+                    
                 </div>
             </div>
-
-
-
-            <div class="col-sm-4 panel panel-default submissionsBarMargin">
-                <h3 class="text panel-heading">Submissions per Country</h3>
-                <div id="submissionsBarChart" class="panel-body">
+            <div class="col-sm-4">
+                <h3>Submissions per Country</h3>
+                <div id="submissionsBarChart">
                 </div>
             </div>
-
-
-            <div class="col-sm-4 panel panel-default pledgesCategoryMargin">
-                <h3 class="text panel-heading">Amount Pledged in Dollars per Category</h3>
-                <div id="pledgesCategoryChart" class="panel-body">
+            <div class="col-sm-4">
+                <h3>Amount Pledged in Dollars per Category</h3>
+                <div id="pledgesCategoryChart">
                 </div>
             </div>
-
-
         </div>
-
-
-
-
 
 
 </body>
