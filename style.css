@@ -1,0 +1,54 @@
+body {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0L2J9S1ohoXlbjpxAq8BaYt_DDe-J3x4Ut15sTZwIk4JXGsyz");
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+
+ /*The code below is used as a visual aide to assist positioning charts and the labels inside div space.*/
+svg {
+    border: 2px solid royalblue;
+    background-color:white;
+}
+
+h1,h3{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight:600;
+    color:white;
+}
+
+p{
+    color:white;
+    font-size:20px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.reset-button{
+    color:LemonChiffon;
+}
+
+.info-icon{
+    padding-left:5px;
+}
+
+.info-icon:hover { 
+    color: LemonChiffon;
+}
+
+.x.axis text {
+     /*credit to davisford on github*/
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+
+
+
+#resultPieChart svg {
+    height: 100%;
+    width: 100%;
+}
+
+#resultPieChart {
+    height: 300px;
+}
+

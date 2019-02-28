@@ -4,11 +4,6 @@ queue()
 
 function makeCharts(error, transactionsData) {
     let ndx = crossfilter(transactionsData);
-
-
-
-
-
     let parseDate = d3.time.format("%Y/%m/%d").parse;
 
 
@@ -22,18 +17,18 @@ function makeCharts(error, transactionsData) {
     let total = launchedDim.group().reduceSum(dc.pluck("backers"));
     let minDate = launchedDim.bottom(1)[0].launched;
     let maxDate = launchedDim.top(1)[0].launched;
-    
-    
+
+
     let lineSpend = dc.lineChart("#submissionsTimeLineChart");
     lineSpend
         .width(800)
         .height(300)
-        .margins({top:10, bottom:60, right:20, left:70})
+        .margins({ top: 10, bottom: 60, right: 20, left: 70 })
         .dimension(launchedDim)
         .group(total)
         .x(d3.time.scale().domain([minDate, maxDate]))
         .xAxisLabel("September 2016 - January 2018")
-        
+
 
 
 
@@ -47,15 +42,15 @@ function makeCharts(error, transactionsData) {
         .externalRadiusPadding(10)
         .dimension(resultDim)
         .group(totalResults)
-        
-        
+
+
 
     let popularCategoryDim = ndx.dimension(dc.pluck("subCategory"));
     let totalAmount = popularCategoryDim.group()
     dc.rowChart("#categoryRowChart")
         .height(340)
         .width(520)
-        .margins({top:10, bottom:60, right:20, left:40})
+        .margins({ top: 10, bottom: 60, right: 20, left: 40 })
         .dimension(popularCategoryDim)
         .group(totalAmount)
         .elasticX(true)
@@ -66,7 +61,7 @@ function makeCharts(error, transactionsData) {
     dc.barChart("#submissionsBarChart")
         .height(300)
         .width(520)
-        .margins({top:10, bottom:70, right:20, left:50})
+        .margins({ top: 10, bottom: 70, right: 20, left: 50 })
         .dimension(countryDim)
         .group(totalSubPerCountry)
         .x(d3.scale.ordinal())
@@ -74,7 +69,7 @@ function makeCharts(error, transactionsData) {
         .xUnits(dc.units.ordinal)
         .elasticY(true)
         .yAxisLabel("Submission Amount")
-        
+
 
 
 
@@ -83,7 +78,7 @@ function makeCharts(error, transactionsData) {
     dc.barChart("#pledgesCategoryChart")
         .height(300)
         .width(520)
-        .margins({top:10, bottom:70, right:20, left:70})
+        .margins({ top: 10, bottom: 70, right: 20, left: 70 })
         .dimension(subCatDim)
         .group(amountPledged)
         .x(d3.scale.ordinal())
@@ -91,52 +86,20 @@ function makeCharts(error, transactionsData) {
         .xAxisLabel("Submission Categories")
         .elasticY(true)
         .yAxisLabel("Amount in Dollars")
-        
-        
-    
-    let all = ndx.groupAll()
-        
-        
-        dc.numberDisplay("#number-box")
-        
+
+
+
+    let all = ndx.groupAll();
+    dc.numberDisplay("#number-box")
+
         .formatNumber(d3.format("d"))
-       .valueAccessor(function (d) {
-           return d;
-       })
-       .group(all);
-       
-       
-      
-       
-    //     let pledged = ndx.groupAll().reduce(
-    //     function(p, v) {
-    //       p.total  += +v["pledged"];
-    //       return p;
-    //   },
-    //   function(p, v) {
-
-    //       p.total -= -v["pledged"];
-    //       return p;
-    //   },
-    //   function() {
-    //       return { total: 0 };
-    //   })
-    //         console.log(pledged[0])
-        
-            
-            
-    //         dc.numberDisplay("#pledgedBox")
-            
-    //         .formatNumber(d3.format("d"))
-    //       .valueAccessor(function (d) {
-    //           return d.total;
-    //       })
-    //   .group(pledged); // no quotes because its a variable from directly above.
+        .valueAccessor(function(d) {
+            return d;
+        })
+        .group(all);
 
 
-                dc.renderAll();
-            }
-            
-            
+    dc.renderAll();
+}
 
 

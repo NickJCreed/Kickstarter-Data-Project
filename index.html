@@ -14,25 +14,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.js"></script>
-    <script type="text/javascript" src="ksData.js"></script>
-    <link rel="stylesheet" href="ksData.css" type="text/css" />
+    <script type="text/javascript" src="graphs.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
     <title>Kickstarted</title>
 </head>
 
 <body>
+
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-6">
                 <h1>Kickstarted</h1>
-                <p>You are analysing <span id="number-box"></span> projects.
-                    <a href="javascript:dc.filterAll(); dc.renderAll();" class="reset-button">Reset Charts</a></p>
+                <p>You are analysing <span id="number-box"></span> projects.</p>
+                <a href="javascript:dc.filterAll(); dc.renderAll();" type="button" class="btn btn-primary reset-button">Reset Charts <i class="fas fa-redo"></i></a>
+                <button type="button" class="btn btn-primary reset-button" data-toggle="modal" data-target="#aboutModal">Learn more!</button>
+                
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-md-6 col-sm-6">
-                <h3>Project Submissions Timeline</h3>
+                <h3>Project Submissions Timeline<i class="fas fa-info-circle info-icon" data-toggle="modal" data-target="#timelineModal"></i></h3>
                 <span id="submissionsTimeLineChart"></span>
             </div>
             <div class="col-md-3 col-sm-3">
@@ -46,7 +50,7 @@
             <div class="col-sm-4">
                 <h3>Submissions per Category</h3>
                 <div id="categoryRowChart">
-                    
+
                 </div>
             </div>
             <div class="col-sm-4">
@@ -60,6 +64,57 @@
                 </div>
             </div>
         </div>
+
+<!--MODALS-->
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Welcome to Kickstarted!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        Kickstarted is a data dashboard that uses project submission data from the popular fund raising site Kickstarter and displays it in an easy to digest format.
+                        <br>
+                        <br>
+                        For those who don't know, Kickstarter is an American public-benefit corporation based in Brooklyn, New York, that maintains a global crowdfunding platform focused on creativity and merchandising. The company's stated mission is to "help bring creative projects to life".
+                        <br>
+                        <br>
+                        On Kickstarter, you only get to see the life of a single project at a time. So with Kickstarted, I wanted to be able to see the life of the site itself with information on popular submission times, success and failure rates as well as some other charts to see can we notice any trends.
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="timelineModal" tabindex="-1" role="dialog" aria-labelledby="timelineModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Project Submission Timeline : September 2016 - January 2018  </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        Current the site is using data from 60,000 + projects that have been submitted between September 2016 and January 2018. This timeline gives us some idea of when during the year are project managers pushing their product or idea to the world!
+                        <br>
+                        <br>
+                        It is worth noting that there are hundreds of thousands of projects on Kickstarter and so this representation is not indicitive of the site's performance overall.
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 
 </body>
