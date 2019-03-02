@@ -11,13 +11,13 @@ svg {
     background-color:white;
 }
 
-h1,h3{
+h1,h3 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight:600;
     color:white;
 }
 
-p{
+p {
     color:white;
     font-size:20px;
     font-family: 'IBM Plex Sans', sans-serif;
@@ -33,6 +33,10 @@ p{
 
 .info-icon:hover { 
     color: LemonChiffon;
+}
+
+.graph-border{
+    margin: 20px;
 }
 
 .x.axis text {

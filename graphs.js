@@ -18,7 +18,7 @@ function makeCharts(error, transactionsData) {
     let minDate = launchedDim.bottom(1)[0].launched;
     let maxDate = launchedDim.top(1)[0].launched;
 
-
+    // Project Submissions Timeline Chart
     let lineSpend = dc.lineChart("#submissionsTimeLineChart");
     lineSpend
         .width(800)
@@ -31,7 +31,7 @@ function makeCharts(error, transactionsData) {
 
 
 
-
+    // Project Funding Results Pie Chart
     let resultDim = ndx.dimension(dc.pluck("result"));
     let totalResults = resultDim.group()
     dc.pieChart("#resultPieChart")
@@ -44,7 +44,7 @@ function makeCharts(error, transactionsData) {
         .group(totalResults)
 
 
-
+    // Submissions Per Category Row Chart
     let popularCategoryDim = ndx.dimension(dc.pluck("subCategory"));
     let totalAmount = popularCategoryDim.group()
     dc.rowChart("#categoryRowChart")
@@ -54,8 +54,10 @@ function makeCharts(error, transactionsData) {
         .dimension(popularCategoryDim)
         .group(totalAmount)
         .elasticX(true)
+        
+       
 
-
+    // Submissions Per Country Bar Chart
     let countryDim = ndx.dimension(dc.pluck("country"));
     let totalSubPerCountry = countryDim.group()
     dc.barChart("#submissionsBarChart")
@@ -72,7 +74,7 @@ function makeCharts(error, transactionsData) {
 
 
 
-
+    // Amount Pledged In Dollars Per Category
     let subCatDim = ndx.dimension(dc.pluck("subCategory"));
     let amountPledged = subCatDim.group().reduceSum(dc.pluck("pledged"));
     dc.barChart("#pledgesCategoryChart")
