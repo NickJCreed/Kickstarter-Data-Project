@@ -22,15 +22,14 @@
 </head>
 
 <body>
-
+<!--Charts and Graphs-->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="text-center">
                 <h1>Kickstarted</h1>
                 <p>You are analysing <span id="number-box"></span> projects.</p>
-                <a href="javascript:dc.filterAll(); dc.renderAll();" type="button" class="btn btn-primary reset-button">Reset Charts <i class="fas fa-redo"></i></a>
-                <button type="button" class="btn btn-primary reset-button" data-toggle="modal" data-target="#aboutModal">Learn more!</button>
-                
+                <button type="button" class="btn btn-primary custom-button" data-toggle="modal" data-target="#aboutModal">About</button>
+                <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-primary custom-button">Reset Charts <i class="fas fa-redo"></i></a>
             </div>
         </div>
 
@@ -40,7 +39,7 @@
                 <span id="submissionsTimeLineChart"></span>
             </div>
             <div class="col-md-3 col-sm-3">
-                <h3>Project Funding Results</h3>
+                <h3>Project Funding Results<i class="fas fa-info-circle info-icon" data-toggle="modal" data-target="#resultsModal"></i></h3>
                 <div id="resultPieChart">
                 </div>
             </div>
@@ -48,29 +47,31 @@
 
         <div class="row">
             <div class="col-sm-4">
-                <h3>Submissions per Category</h3>
+                <h3>Submissions per Category<i class="fas fa-info-circle info-icon" data-toggle="modal" data-target="#categoryModal"></i></h3>
                 <div id="categoryRowChart">
 
                 </div>
             </div>
             <div class="col-sm-4">
-                <h3>Submissions per Country</h3>
+                <h3>Submissions per Country<i class="fas fa-info-circle info-icon" data-toggle="modal" data-target="#countryModal"></i></h3>
                 <div id="submissionsBarChart">
                 </div>
             </div>
             <div class="col-sm-4">
-                <h3>Amount Pledged in Dollars per Category</h3>
+                <h3>Amount Pledged in Dollars per Category<i class="fas fa-info-circle info-icon" data-toggle="modal" data-target="#pledgedModal"></i></h3>
                 <div id="pledgesCategoryChart">
                 </div>
             </div>
         </div>
 
+
 <!--MODALS-->
+        <!--About-->
         <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Welcome to Kickstarted!</h5>
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title">Welcome to Kickstarted!</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -83,6 +84,9 @@
                         <br>
                         <br>
                         On Kickstarter, you only get to see the life of a single project at a time. So with Kickstarted, I wanted to be able to see the life of the site itself with information on popular submission times, success and failure rates as well as some other charts to see can we notice any trends.
+                        <br>
+                        <br>
+                        To interact with the charts and data, simply click on different bars, slices and sections. This will effectively filter the data set by your selection. To reverse this, simply click on Reset Charts. For more information on what each chart represents, click the info icon!
                         
                     </div>
                     <div class="modal-footer">
@@ -92,11 +96,12 @@
             </div>
         </div>
         
+        <!--Timeline Modal Information-->
         <div class="modal fade" id="timelineModal" tabindex="-1" role="dialog" aria-labelledby="timelineModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Project Submission Timeline : September 2016 - January 2018  </h5>
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title" >Project Submission Timeline : September 2016 - January 2018  </h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -114,8 +119,151 @@
                 </div>
             </div>
         </div>
-
-
+        
+        <!--Results Modal Information-->
+        <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="resultsModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title" >Project Funding Results</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        Once a project is accepted and goes live on Kickstarter, it can end in a number of ways such as <b>Successful, Failed, Cancelled or Suspended.</b>
+                        <br>
+                        <br>
+                        <b>Successful projects</b> have reached or exceeded their funding goal within their given time limit and will receive the pledged amount, minus Kickstarter deductions, for the project that was advertised.
+                        <br>
+                        <br>
+                        <b>Failed projects</b> are those which didn't achieve their funding goal amount within the time frame. These are removed and all monies are returned to that projects backers.
+                        <br>
+                        <br>
+                        <b>Cancelled projects</b> are a group where very real issues can cause those even with the best of intentions to realise long term, their idea was not sustainable and thus backed out. There are other issues that cause cancellations such as scams. A famous one being the story of Mythic: The Story of Gods and Men. More on this and other well known cancelled projects can be found <a href="https://www.trustedreviews.com/opinion/kickstarter-projects-cancelled-2932715">here</a>.
+                        <br>
+                        <br>
+                        <b>Suspended projects</b>.Last but not least there are those that are suspended by Kickstarter themsevles. This happens when a project is found to be violating the terms put in place by Kickstarter. For a list of these terms, click <a href="https://help.kickstarter.com/hc/en-us/articles/115005139813-Why-would-a-project-be-suspended-">here</a>.
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--Submissions Per Category Modal Information-->
+        <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="categoryModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title" >Submission Categories</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        On Kickstarter, there are a number of different categories you can browse to view projects that may interest you.
+                        For this project, we use a range of different categories from Games and Technology to Theater and Journalism.
+                        <br>
+                        <br>
+                        This row chart shows us the amount of submissions per category between September of 2016 and January of 2018.
+                        As you interact with the charts, we can see which categories were most and least popular. 
+                        <br>
+                        <br>
+                        For example, if we click on Great Britain we can see that the top 3 categories were Games, Film and Video, and Publishing.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--Submissions Per Country Modal Information-->
+        <div class="modal fade" id="countryModal" tabindex="-1" role="dialog" aria-labelledby="countryModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title">Submission Categories</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        By the end of 2018, the following countries were able to launch projects for funding on Kickstarter:
+                        <br>
+                        <br>
+                        <table style="width:100%">
+                            <tr>
+                            <td> United States of America </td>
+                            <td> United Kingdom </td>
+                            <td> Canada </td>
+                            <td> Australia </td>
+                            </tr>
+                            <tr>
+                            <td> New Zealand </td>
+                            <td> The Netherlands </td>
+                            <td> Denmark </td>
+                            <td> Ireland </td>
+                            </tr>
+                            <tr>
+                            <td> Norway </td>
+                            <td> Sweden </td>
+                            <td> Germany </td>
+                            <td> France </td>
+                            </tr>
+                            <tr>
+                            <td> Spain </td>
+                            <td> Italy </td>
+                            <td> Austria </td>
+                            <td> Belgium </td>
+                            </tr>
+                            <tr>
+                            <td> Switzerland </td>
+                            <td> Luxembourg </td>
+                            <td> Hongkong </td>
+                            <td> Singapore </td>
+                            </tr>
+                            <tr>
+                            <td> Mexico</td>
+                            <td>Japan</td>
+                            <td></td>
+                            <td></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <br>
+                        The purpose of this chart is to show you the amount of submissions per country after being filtered by time frame, result, category and or pledged amount.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--Amount Pledged in Dollars per Category Information-->
+        <div class="modal fade" id="pledgedModal" tabindex="-1" role="dialog" aria-labelledby="pledgedModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title">Amount Pledged in Dollars per Category</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        The following chart displays the amount of money pledged in each category. As projects are launched from all over the world, I have converted all the amounts pledged into dollars to make for easy comparisons.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
