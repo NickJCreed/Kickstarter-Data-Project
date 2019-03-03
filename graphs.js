@@ -1,5 +1,5 @@
 queue()
-    .defer(d3.csv, "ksMainBatch.csv")
+    .defer(d3.csv, "ksMainBatch5.csv")
     .await(makeCharts);
 
 function makeCharts(error, transactionsData) {
@@ -14,7 +14,7 @@ function makeCharts(error, transactionsData) {
     })
 
     let launchedDim = ndx.dimension(dc.pluck("launched"));
-    let total = launchedDim.group().reduceSum(dc.pluck("backers"));
+    let total = launchedDim.group().reduceSum(dc.pluck("value"));
     let minDate = launchedDim.bottom(1)[0].launched;
     let maxDate = launchedDim.top(1)[0].launched;
 
@@ -28,6 +28,7 @@ function makeCharts(error, transactionsData) {
         .group(total)
         .x(d3.time.scale().domain([minDate, maxDate]))
         .xAxisLabel("September 2016 - January 2018")
+        .elasticY(true)
 
 
 
@@ -99,6 +100,7 @@ function makeCharts(error, transactionsData) {
             return d;
         })
         .group(all);
+        
 
 
     dc.renderAll();

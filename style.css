@@ -2,14 +2,13 @@ body {
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0L2J9S1ohoXlbjpxAq8BaYt_DDe-J3x4Ut15sTZwIk4JXGsyz");
     background-repeat: no-repeat;
     background-size: cover;
-    float: left;
 }
-
 
  /*The code below is used as a visual aide to assist positioning charts and the labels inside div space.*/
 svg {
     border: 2px solid royalblue;
     background-color:white;
+    
 }
 
 h1,h3 {
@@ -34,6 +33,7 @@ p {
 
 .info-icon:hover { 
     color: LemonChiffon;
+    
 }
 
 .graph-border{
@@ -46,14 +46,14 @@ p {
     transform: rotate(-45deg);
 }
 
-#resultPieChart svg {
-    height: 100%;
-    width: 100%;
-}
+/*#resultPieChart svg {*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*}*/
 
-#resultPieChart {
-    height: 300px;
-}
+/*#resultPieChart {*/
+/*    height: 300px;*/
+/*}*/
 
 footer {
     background-color: #29424E;
