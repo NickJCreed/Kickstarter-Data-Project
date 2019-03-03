@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.js"></script>
-    <script type="text/javascript" src="graphs.js"></script>
+    <script type="text/javascript" src="js/graphs.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
     <title>Kickstarted</title>
 </head>
@@ -27,6 +27,8 @@
             <div class="text-center">
                 <h1>Kickstarted</h1>
                 <p>You are analysing <span id="number-box"></span> projects.</p>
+                <p>A total of <span id="backers-box"></span> people backed these projects.</p>
+                <p>There was a total of $ <span id="pledged-box"></span> pledged.</p>
                 <button type="button" class="btn btn-primary custom-button" data-toggle="modal" data-target="#aboutModal">About</button>
                 <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-primary custom-button">Reset Charts <i class="fas fa-redo"></i></a>
             </div>

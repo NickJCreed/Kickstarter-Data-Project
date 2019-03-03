@@ -1,5 +1,5 @@
 queue()
-    .defer(d3.csv, "ksMainBatch5.csv")
+    .defer(d3.csv, "data/ksMainBatch.csv")
     .await(makeCharts);
 
 function makeCharts(error, transactionsData) {
@@ -91,15 +91,34 @@ function makeCharts(error, transactionsData) {
         .yAxisLabel("Amount in Dollars")
 
 
-
+//The code below continuously generates a number which represents : how many projects exist based on the users selections.
     let all = ndx.groupAll();
     dc.numberDisplay("#number-box")
-
-        .formatNumber(d3.format("d"))
+        .formatNumber(d3.format(","))
         .valueAccessor(function(d) {
             return d;
         })
         .group(all);
+
+//The code below continuously generates a number which represents : how many people backed the current number of projects. 
+    let sumBackers = ndx.groupAll().reduceSum(dc.pluck("backers"));
+    dc.numberDisplay('#backers-box')
+        .formatNumber(d3.format(".3s"))  //This format allows for the larger numbers to be easily comprehended
+        .valueAccessor( function(d) { 
+            return d;
+        })
+        .group(sumBackers);
+
+//The code below continuously generates a number which represents : how much was pledged to all the projects based on the users selections. 
+    let sumPledged = ndx.groupAll().reduceSum(dc.pluck("pledged"));
+    dc.numberDisplay('#pledged-box')
+        .formatNumber(d3.format(".4s")) //This format allows 
+        .valueAccessor( function(d) { 
+            return d;
+        })
+        .group(sumPledged);
+        
+    
         
 
 
