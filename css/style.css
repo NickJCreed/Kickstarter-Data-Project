@@ -4,6 +4,13 @@ body {
     background-size: cover;
 }
 
+.container-fluid {
+    padding-right:0;
+    padding-left:0;
+    margin-right:auto;
+    margin-left:auto
+ }
+ 
  /*The code below is used as a visual aide to assist positioning charts and the labels inside div space.*/
 svg {
     border: 2px solid royalblue;

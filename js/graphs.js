@@ -2,14 +2,14 @@ queue()
     .defer(d3.csv, "data/ksMainBatch.csv")
     .await(makeCharts);
 
-function makeCharts(error, transactionsData) {
-    let ndx = crossfilter(transactionsData);
+function makeCharts(error, chartsData) {
+    let ndx = crossfilter(chartsData);
     let parseDate = d3.time.format("%Y/%m/%d").parse;
 
 
 
 
-    transactionsData.forEach(function(d) {
+    chartsData.forEach(function(d) {
         d.launched = parseDate(d.launched);
     })
 
@@ -94,7 +94,7 @@ function makeCharts(error, transactionsData) {
 //The code below continuously generates a number which represents : how many projects exist based on the users selections.
     let all = ndx.groupAll();
     dc.numberDisplay("#number-box")
-        .formatNumber(d3.format(","))
+        .formatNumber(d3.format(",")) // As this represents the quantity of projects it is being formatted automatically using a comma.
         .valueAccessor(function(d) {
             return d;
         })
@@ -112,7 +112,7 @@ function makeCharts(error, transactionsData) {
 //The code below continuously generates a number which represents : how much was pledged to all the projects based on the users selections. 
     let sumPledged = ndx.groupAll().reduceSum(dc.pluck("pledged"));
     dc.numberDisplay('#pledged-box')
-        .formatNumber(d3.format(".4s")) //This format allows 
+        .formatNumber(d3.format(".4s")) //This format allows for the larger numbers to be easily comprehended
         .valueAccessor( function(d) { 
             return d;
         })
