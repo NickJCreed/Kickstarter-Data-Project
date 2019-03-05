@@ -3,13 +3,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.container-fluid {
-    padding-right:0;
-    padding-left:0;
-    margin-right:auto;
-    margin-left:auto
- }
  
  /*The code below is used as a visual aide to assist positioning charts and the labels inside div space.*/
 svg {
@@ -52,15 +45,6 @@ p {
     text-anchor: end !important;
     transform: rotate(-45deg);
 }
-
-/*#resultPieChart svg {*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*}*/
-
-/*#resultPieChart {*/
-/*    height: 300px;*/
-/*}*/
 
 footer {
     background-color: #29424E;
