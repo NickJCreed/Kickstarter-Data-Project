@@ -4,11 +4,10 @@ An Interactive Frontend Development Project.
 
 Kickstarted is a data dashboard that takes a dataset of projects launched on the platform Kickstarter and represents an abundance of otherwise hidden information in a simple to consume manner using charts, graphs, and number displays.
 
-Since Kickstarters inception, there has been over 430,000 projects launched on the crowdfunding platform.
 This data dashboard currently represents <b>21,000+ projects</b> launched from <b>19 countries</b> across <b>15 different categories</b> over <b>16 months</b>. It also allows you to see how over <b>2 Million people</b> engaged in this market with a staggering <b>$195 Million Dollars</b> of their own money.
 
 ## UX
-Kickstarted was built for project managers who wish to launch their projects on the crowdfunding platform. This dashboard can help them achieve an understanding of many relevant key factors such as how much competition has their category faced in the past, what are the previous success and failure rates, how much has been pledged before and by how many backers as well as when during the year might be the best time to launch their project. 
+Kickstarted was built for project managers who wish to launch their projects on the crowdfunding platform but wanted more information on the platforms overall activity. This dashboard can help them achieve an understanding of many relevant key factors such as how much competition has their category faced in the past, what are the previous success and failure rates, how much has been pledged before and by how many backers as well as when during the year might be the best time to launch their project. 
 
 As the user interacts with the dashboard, each selection acts as a filter causing the site to update it's information. An example of this is when the user clicks on "Games" in the "No. of Submissions per Category" row chart. Some examples of what they will see is an updated timeline for when "Games" projects have been launched, which country launched the most "Games" projects as well as how many were launched in total and how much was pledged. This is just some of what is shown. The user could make a second selection of their choosing and the site will update again to reflect the information represented by their selections.
 
@@ -26,9 +25,9 @@ The following user stories are catered for with this data dashboard.
 All the above can be fulfilled by interacting with the dashboard and making relevant selections.
 
 ## UI
-In terms of User Interface, I've kept to the original design planned in the wireframe which can been seen below aside from moving the row chart to the left. All aspects of the site are touch-friendly (more in the testing section).
+In terms of User Interface, I've kept to the original design planned in the wireframe which can been seen below aside from moving the row chart to the left. All aspects of the site are touch-friendly.
 
- dashboard. ![here](https://raw.githubusercontent.com/ldettorre/Kickstarter-Data-Project/master/images/wireframe.png)
+ ![Wireframe](https://raw.githubusercontent.com/ldettorre/Kickstarter-Data-Project/master/images/wireframe.png)
  
 
 ## Features
@@ -63,44 +62,43 @@ In terms of User Interface, I've kept to the original design planned in the wire
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+### Responsiveness
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+I've tested the responsiveness of Kickstarted using a assortment of physical hardware and resolution emulation via the likes of Chrome Dev Tools and [ResponsiveDesignChecker](https://responsivedesignchecker.com/). It is worth noting that Firefox Developer tools were not used as extensively as the other options because for some reason it rendered the pie chart full width. Firefox Developer Tools was the only test utility that created this bug.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+###### Physical
+For the physical hardware, the dashboard was tested on a Sony 75 inch 4k panel, Asus and Dell 15.6 inch 1080p laptops, a Dell Latitude 13 inch touchscreen laptop and a Samsung Galaxy S8 in landscape and portrait mode. The result of the of the hardware testing was that the dashboard despite being intended for desktop use, was very responsive across all resolution types. Even when the site was loaded on a Samsung Galaxy S8 in both landscape and portrait mode, once I double tapped an empty space on the site it would zoom out slighty and accomodate the charts and graphs in a stacked pattern. However, you could not view the specific numerical amounts of each chart/graph as you would on desktop by hovering with your mouse.
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+###### Emulation
+For resolution emulation, I used Chrome Dev Tools and ResponsiveDesignChecker. Using Chrome Dev Tools, the dashboard charts and graphs did move well to adjust but at anything below 1030px width was not desirable for use and the footer began to shrink in width. The site perfromed very well using ResponsiveDesignChecker's desktop emulations however once you reached the lower resolutions, a y-axis scroll was introduced and the layout broke slightly between the pie chart and row chart. Also in the smaller devices it just was not suitable nor is it intended for that usage environment.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+###### Data Testing
+I also performed some extra manual testing using the CSV file in Google Sheets. Essentially I applied manual filters to see if the same numbers were returned when filtering by different funding result states eg: Successfull or Failed. As well as by different country of submission and total projects, total pledged amounts. Happy to say all this information was being accurately represented in the final product.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+It is worth noting that during the development of this project, the charts have been tested at intervals just to ensure everything was truely interactive and filtering by user selection. As of submitting this project, all charts, graphs and number displays work together to represent the information desired by the user. 
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ## Deployment
+I've hosted this site using GitHub Pages and deployed from the master branch.
+These are the steps I took to deploy this project.
+1. I selected the project repository from my list of repositories and once loaded I then clicked on the settings cog icon.
+2. I then scrolled down to the GitHub Pages section and under Source, clicked "None" and changed it to "Master Branch".
+3. This automatically saved and reloaded the page. After scrolling down to the GitHub Pages section, the live link was then available for use.
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+Any future commits to the master branch will automatically update the site so caution is needed incase an unresolved bug or issue is pushed.
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+In order to use this repository yourself, enter `git clone //github.com/ldettorre/Kickstarter-Data-Project.git` into the terminal of yor chosen editor.
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named `index.html`.
 
 
-## Credits
+## Acknowledgements and Credits
+Although I can no longer see her contribution on my code after making multiple changes of my own, I would like to credit Katie Maxwell for her help while I was learning how to use the technologies for this project.
 
-### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
-### Media
-- The photos used in this site were obtained from ...
+### Content and Media
+* The dataset for this project was taken from [Kaggle](https://www.kaggle.com/).
+* The background image was from Google Images.
 
-### Acknowledgements
 
-- I received inspiration for this project from X
+
