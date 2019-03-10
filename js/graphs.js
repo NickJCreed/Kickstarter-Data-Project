@@ -21,7 +21,7 @@ function makeCharts(error, chartsData) {
     // Project Submissions Timeline Chart
     let lineSpend = dc.lineChart("#submissionsTimeLineChart");
     lineSpend
-        .width(800)
+        .width(1000)
         .height(300)
         .margins({ top: 10, bottom: 60, right: 20, left: 70 })
         .dimension(launchedDim)
@@ -62,7 +62,7 @@ function makeCharts(error, chartsData) {
     let countryDim = ndx.dimension(dc.pluck("country"));
     let totalSubPerCountry = countryDim.group()
     dc.barChart("#submissionsBarChart")
-        .height(300)
+        .height(340)
         .width(520)
         .margins({ top: 10, bottom: 70, right: 20, left: 50 })
         .dimension(countryDim)
@@ -79,7 +79,7 @@ function makeCharts(error, chartsData) {
     let subCatDim = ndx.dimension(dc.pluck("subCategory"));
     let amountPledged = subCatDim.group().reduceSum(dc.pluck("pledged"));
     dc.barChart("#pledgesCategoryChart")
-        .height(300)
+        .height(340)
         .width(520)
         .margins({ top: 10, bottom: 70, right: 20, left: 70 })
         .dimension(subCatDim)

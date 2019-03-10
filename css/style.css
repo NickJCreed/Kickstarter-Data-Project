@@ -40,6 +40,7 @@ p {
     margin: 20px;
 }
 
+/*The below code allows x axis text to be diagonal and allow for easier reading*/
 .x.axis text {
      /*credit to davisford on github*/
     text-anchor: end !important;
@@ -48,4 +49,5 @@ p {
 
 footer {
     background-color: #29424E;
+    padding: 5px 0px 5px 0px;
 }
